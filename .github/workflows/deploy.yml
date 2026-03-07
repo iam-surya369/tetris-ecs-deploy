@@ -41,7 +41,7 @@ jobs:
                 context: ./app
                 file: app/Dockerfile
                 push: true
-                tags: ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPO_NAME }}:${{ github.sha }}
+                tags: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION_NAME }}.amazonaws.com/${{ vars.ECR_REPO_NAME }}:${{ github.sha }}
                 # outputs: type=image,name=target,push-by-digest=true,name-canonical=true
 
             - name: Fill in the new image URI into the Amazon ECS task definition
