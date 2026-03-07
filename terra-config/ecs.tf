@@ -56,4 +56,8 @@ resource "aws_ecs_service" "tetris_service" {
     security_groups  = [aws_security_group.ecs_sg.id]
     assign_public_ip = true # Set to true if in a public subnet, false if private
   }
+
+  lifecycle {
+    ignore_changes = [task_definition, desired_count]
+  }
 }
