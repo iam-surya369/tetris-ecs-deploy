@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Classic Tetris game — stack blocks, clear lines, chase the high score!"
+    />
+    <title>Tetris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="game-wrapper">
+      <header class="game-header">
+        <h1>TETRIS</h1>
+      </header>
+
+      <main class="game-container">
+        <!-- Sidebar Left: Hold & Controls -->
+        <aside class="sidebar sidebar-left">
+          <div class="panel hold-panel">
+            <h2>HOLD</h2>
+            <canvas id="hold-canvas" width="100" height="100"></canvas>
+          </div>
+          <div class="panel controls-panel">
+            <h2>CONTROLS</h2>
+            <ul>
+              <li><kbd>←</kbd><kbd>→</kbd> Move</li>
+              <li><kbd>↑</kbd> Rotate</li>
+              <li><kbd>↓</kbd> Soft Drop</li>
+              <li><kbd>Space</kbd> Hard Drop</li>
+              <li><kbd>C</kbd> Hold</li>
+              <li><kbd>P</kbd> Pause</li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Game Board -->
+        <div class="board-wrapper">
+          <canvas id="game-canvas" width="300" height="600"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-content">
+              <p id="overlay-text">Press ENTER to Start</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Right: Score & Next -->
+        <aside class="sidebar sidebar-right">
+          <div class="panel score-panel">
+            <h2>SCORE</h2>
+            <p id="score">0</p>
+          </div>
+          <div class="panel level-panel">
+            <h2>LEVEL</h2>
+            <p id="level">1</p>
+          </div>
+          <div class="panel lines-panel">
+            <h2>LINES</h2>
+            <p id="lines">0</p>
+          </div>
+          <div class="panel next-panel">
+            <h2>NEXT</h2>
+            <canvas id="next-canvas" width="100" height="300"></canvas>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="game-footer">
+        <p>Built for deployment on <span class="highlight">AWS ECS</span></p>
+      </footer>
+    </div>
+
+    <script src="js/tetris.js"></script>
+  </body>
+</html>
