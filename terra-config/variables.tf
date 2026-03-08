@@ -51,4 +51,8 @@ variable "log_retention_days" {
   type        = number
   default     = 7
 }
+variable "github_repo" {
+  description = "GitHub repository in org/repo format for OIDC trust policy"
+  type        = string
+}
 

@@ -29,3 +29,8 @@ output "ecr_repository_names" {
     for k, v in aws_ecr_repository.repos : k => v.name
   }
 }
+
+output "github_actions_role_arn" {
+  description = "ARN of the GitHub Actions CI/CD role — use as AWS_ROLE_ARN in GitHub secrets"
+  value       = aws_iam_role.github_actions_role.arn
+}

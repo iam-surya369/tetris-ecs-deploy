@@ -2,6 +2,11 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
+# Lookup the existing GitHub OIDC provider
+data "aws_iam_openid_connect_provider" "github" {
+  url = "https://token.actions.githubusercontent.com"
+}
+
 # data "aws_ami" "ubuntu" {
 #   most_recent = true
 #   owners      = ["amazon"]

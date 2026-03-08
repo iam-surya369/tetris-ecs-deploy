@@ -16,3 +16,4 @@ ecr_names = {
 }
 log_group_name     = "/ecs/tetris-cluster"
 log_retention_days = 7
+github_repo        = "iam-surya369/tetris-ecs-deploy"
